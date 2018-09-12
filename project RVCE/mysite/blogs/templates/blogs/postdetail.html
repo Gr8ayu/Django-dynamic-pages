@@ -1,0 +1,14 @@
+{%extends "intro/base.html" %}
+{%block title%} Post{%endblock%}
+
+
+{% block content %}
+<H3>{{posts.title}} kk</H3>
+{{posts.type}}
+<p>
+    {{posts.content}}
+
+</p>
+<p>{{posts.creationDate}}</p>
+
+{%endblock%}

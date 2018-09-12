@@ -1,0 +1,16 @@
+{%extends "intro/base.html" %}
+{%block title%} parler {%endblock%}
+
+
+{% block content %}
+
+Welcome {%if user.profile.full_name%}
+        {{user.profile.full_name}}
+        {%endif%}
+
+{%if not user.profile.full_name%}
+        {{user.username}}
+        {%endif%}
+
+<p><a href="{% url 'blogs:BlogCreate' %}"> ADD POST  </a></p>
+{%endblock%}

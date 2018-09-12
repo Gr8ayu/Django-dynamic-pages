@@ -1,0 +1,39 @@
+nav{
+  box-shadow: 0 5px 10px 1px #c6c6c6;
+}
+
+footer{
+
+  width:100%;
+
+}
+.Linkedin-Id{
+width:300px;
+}
+/*
+Primary Color : #129656
+Primary Color Shadow inset : #0f3824
+
+
+*/
+form{
+width:50%;
+text-align:center;
+}
+
+.login{
+  margin:auto;
+  color : black;
+  margin-top:15px;
+  max-width:500px;
+  text-align:center;
+  padding:auto;
+  padding:15px;
+  border:8px solid #129656;
+  border-radius:5px;
+  box-shadow: 0 0 9px 1px #0f3824 inset;
+}
+
+.navbar-brand{
+
+}

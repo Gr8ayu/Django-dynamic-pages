@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block title%}{%endblock%}</title>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{%static '/images/favicon.png'%}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'intro/style.css' %}" type="text/css">
+</head>
+<body>
+
+
+</div>
+<div class="container-fluid banner well">
+
+</div>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+    </div>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{%url 'intro:homepage' %}">Parler</a>
+    </div>
+    <div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'intro:StudentList'%}">Students</a></li>
+                <li><a href="#section2">Teachers</a></li>
+                <li><a href="{%url 'intro:branch' %}">Branches</a></li>
+                <li><a href="#section4">Clubs</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span
+                        class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'blogs:BlogList'%}">Posts</a></li>
+                        <li><a href="#section52">Section 5-2</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="{%url 'intro:logout'%}"><i class="fas fa-power-off"></i> LogOut </a></li>
+                <li><a href="{%url 'intro:profileUpdate' %}"><i class="fas fa-user-circle"></i>&nbsp;Profile</a></li>
+                {%endif%}
+
+                {% if not user.is_authenticated %}
+                <li><a href="{%url 'intro:login'%}"><i class="fas fa-power-off"></i>LogIn</a></li>
+                <li><a href="{%url 'intro:signup' %}"><i class="fas fa-user-plus"></i>&nbsp;SignUp</a></li>
+                {%endif%}
+
+            </ul>
+        </div>
+    </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid well">
+
+    {%block content%}
+    {%endblock%}
+</div>
+
+
+</div>
+
+<footer class="page-footer well">
+    <div class="Linkedin-Id img-responsive thumbnail">
+        <a href="https://linkedin.com/in/gr8ayu"><img src="https://image.ibb.co/mYinPe/aa.png"/></a>
+    </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+  {% load static %}
+  <script src="{% static 'javascript/script.js' %}"></script>
+
+</body>
+</html>
